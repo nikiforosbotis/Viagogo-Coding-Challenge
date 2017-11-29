@@ -5,10 +5,10 @@ Grid Developer Test
 
 1. (Windows & Linux) Clone the repository and run the following command, after you have cd to the corresponding directory.
 
-`g++ -Wall -g event.h ticket.h event.cpp ticket.cpp main.cpp -o grid`
+   `g++ -Wall -g event.h ticket.h event.cpp ticket.cpp main.cpp -o grid`
 
 
-which actually compiles (using the g++ compiler, needs to be installed in your machine) the listed files and creates an executable called grid(.exe in Windows) which can be used in order to run the application.
+   which actually compiles (using the g++ compiler, needs to be installed in your machine) the listed files and creates an executable called grid(.exe in Windows) which can be used in order to run the application.
 
 2. (Linux, using GNU Make) Clone the repository and run the "make" command, after you have cd to the corresponding directory.
 
