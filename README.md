@@ -14,7 +14,9 @@ which actually compiles (using the g++ compiler, needs to be installed in your m
 
 When entering the input parameters (coordinate X and coordinate Y) they should be given when the program asks for them by separating them with a whitespace).
 
-**All the assumptions that have been made are explicitly stated in the comments above the corresponding code snippet.**
+## Assumptions
+
+**Most of the assumptions that have been made are explicitly stated in the comments above the corresponding code snippet.**
 
 ## Answers to the Questions
 
