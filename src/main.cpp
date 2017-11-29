@@ -1,5 +1,6 @@
 #include<iostream>
 #include<ctime>
+#include<cstdlib>
 #include<assert.h>
 
 using namespace std;
