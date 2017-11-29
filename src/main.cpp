@@ -1,4 +1,5 @@
 #include<iostream>
+#include<ctime>
 #include<assert.h>
 
 using namespace std;
@@ -7,31 +8,49 @@ using namespace std;
 
 int main() {
 
-  // The nearest events to be shown. Avoid magic numbers
+  // The nearest events to be shown
   const int NEAREST_EVENTS = 5;
 
   int coordX, coordY;
 
   bool swap_done = true;
 
-  Ticket ticket1(50.95);
-  Ticket ticket2(40.42);
-  Ticket ticket3(100.50);
-  Ticket ticket4(20.50);
-  Ticket ticket5(210.50);
+  // use current time as seed for random generator
+  std::srand(std::time(0));
+  /* Generate the number of events for this case as a number ranging from 6 (Minimum)
+   * to 106 (Maximum) */
+  int number_of_events = (std::rand() % 100) + 7;
 
-  int length = 5;
-  Ticket tickets[5] = {ticket1,ticket2, ticket3, ticket4, ticket5};
+  int ticket_num_for_event[number_of_events];
 
-  //SHOULD BE RANDOMLY CREATED
-  Event event1("Tottenham-RM", 5, 9, tickets, length);
-  Event event2("Peter Cay", 0, 6, tickets, length);
-  Event event3("Strictly Come Dancing", 2, 1, tickets, length);
-  Event event4("RBS Six Nations", 8, 0, tickets, length);
-  Event event5("X Factor Live", 1, 9, tickets, length);
-  Event event6("Tears for fears", 5, 5, tickets, length);
+  // Generates tickets number for event i
+  for(int i = 0; i < number_of_events; i++) {
+    /* We assume that each event will have between 100 and 199 tickets. This of course does num_of_events
+     * apply in the real world but neither does the fact that the data is randomly generated. */
+    ticket_num_for_event[i] = (std::rand() % 100) + 100;
+  }
 
-  Event event[] = {event1, event2, event3, event4, event5, event6};
+  Event event[number_of_events];
+  double price;
+  int coordX1 = 0, coordY1 = 0;
+
+  for(int i = 0; i < number_of_events; i++) {
+    /* We assume that each ticket is priced individually (rather than a bunch of tickets having
+     * the same price). This of course does not apply in the real world but it is considered as
+     * a good opportunity to illustrate the usage of the cheapest ticket utility */
+    Ticket tickets_for_event[ticket_num_for_event[i]];
+
+    for(int y = 0; y < ticket_num_for_event[i]; y++) {
+      // We assume that each ticket can be priced from 5 (Minimum) to 1005 (Maximum) USD
+      price = std::rand() % 1000 + 6.0;
+      //tickets1[i][y] = Ticket(price);
+      tickets_for_event[y] = Ticket(price);
+    }
+
+    coordX1 = std::rand() % 10;
+    coordY1 = std::rand() % 10;
+    event[i] = Event(coordX1, coordY1, tickets_for_event, ticket_num_for_event[i]);
+  }
 
   cout << "Please Input Coordinates: " << endl;
   cout << ">";

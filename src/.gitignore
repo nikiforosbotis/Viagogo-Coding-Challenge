@@ -1,0 +1,10 @@
+#ignore generated object (*.o) files
+
+*.o
+
+
+
+#ignore the executable file
+
+main
+main.exe

@@ -6,9 +6,11 @@ using namespace std;
 
 int Event::num_of_events = 0;
 
-Event::Event(string name, int coordX, int coordY, Ticket event_tickets[], int ticket_num) {
+Event::Event() {};
+
+Event::Event(int coordX, int coordY, Ticket event_tickets[], int ticket_num) {
   this->id = ++num_of_events;
-  this->name = name;
+  //this->name = name;
   this->coordX = coordX;
   this->coordY = coordY;
   this->available_tickets = ticket_num;

@@ -4,8 +4,8 @@ using namespace std;
 
 #include "ticket.h"
 
-// We make the assumption that each event can have up to 1.000 tickets.
-const int MAX_TICKETS = 1000;
+// We make the assumption that each event can have up to 199 tickets.
+const int MAX_TICKETS = 199;
 
 class Event {
 private:
@@ -20,10 +20,13 @@ private:
    * class in terms of UML depiction */
   Ticket tickets[MAX_TICKETS];
 public:
-  /* Constructor of the Event class taking as parameters the name of the event, its
-   * coordinates, the table of Ticket objects which correspond to this and the total
-   * number of tickets that are initially issued */
-  Event(string name, int coordX, int coordY, Ticket event_tickets[], int ticket_num);
+  // Default constructor
+  Event();
+  /* Constructor of the Event class taking as parameters the coordinates of the event,
+   * the table of Ticket objects which correspond to this and the total number of ticket
+   * are initially issued. Name is not included as it is not in the purposes of this task
+   * to be randomly generated */
+  Event(int coordX, int coordY, Ticket event_tickets[], int ticket_num);
   // Returns the Manhattan distance from the given coordinates (arguments)
   double calculate_distance_from_location(int X, int Y);
   // Returns the cheapest price from the tickets that have not been sold yet
