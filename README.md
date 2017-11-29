@@ -3,6 +3,8 @@ Grid Developer Test
 
 ## Run program:
 
+In order to compile and run the program, you need to follow one of the two following options:
+
 1. (Windows & Linux) Clone the repository and run the following command, after you have cd to the corresponding directory.
 
    `g++ -Wall -g event.h ticket.h event.cpp ticket.cpp main.cpp -o grid`
