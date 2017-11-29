@@ -25,9 +25,9 @@ int main() {
 
   // Generates tickets number for event i
   for(int i = 0; i < number_of_events; i++) {
-    /* We assume that each event will have between 100 and 199 tickets. This of course does num_of_events
-     * apply in the real world but neither does the fact that the data is randomly generated. */
-    ticket_num_for_event[i] = (std::rand() % 100) + 100;
+    /* We assume that each event will have between 0 (specification) and 199 tickets. This of course does
+     * not apply in the real world but neither does the fact that the data is randomly generated. */
+    ticket_num_for_event[i] = (std::rand() % 200);
   }
 
   Event event[number_of_events];
@@ -47,16 +47,18 @@ int main() {
       tickets_for_event[y] = Ticket(price);
     }
 
-    coordX1 = std::rand() % 10;
-    coordY1 = std::rand() % 10;
+    // According to the specification, the world operates in the interval [-10,10]
+    coordX1 = std::rand() % 21 - 10;
+    coordY1 = std::rand() % 21 - 10;
+    cout << coordX1 << " and " << coordY1 << endl;
     event[i] = Event(coordX1, coordY1, tickets_for_event, ticket_num_for_event[i]);
   }
 
   cout << "Please Input Coordinates: " << endl;
   cout << ">";
   cin >> coordX >> coordY;
-  assert(coordX >=0 && coordX < 10);
-  assert(coordX >=0 && coordX < 10);
+  assert(coordX >=-10 && coordX < 10);
+  assert(coordY >=-10 && coordY < 10);
 
    /* Find the 5 nearest events by sorting the Events array.
    Bubble sort has been chosen. Quite inefficient (complexity: O(n^2))
