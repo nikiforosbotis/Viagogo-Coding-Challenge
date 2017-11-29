@@ -10,13 +10,13 @@ In order to compile and run the program, you need to follow one of the two follo
    `g++ -Wall -g event.h ticket.h event.cpp ticket.cpp main.cpp -o grid`
 
 
-   which actually compiles (using the g++ compiler, needs to be installed in your machine) the listed files and creates an executable called grid(.exe in Windows) which can be used in order to run the application.
+   which actually compiles (using the g++ compiler, needs to be installed in your machine) the listed files and creates an executable called `grid` ( or `grid.exe` in Windows) which can be used in order to run the application.
 
 2. (Linux, using GNU Make) Clone the repository and run the `make` command, after you have cd to the corresponding directory.
 
    Then, type `./grid` on the command line and the program will run.
 
->When entering the input parameters (coordinate X and coordinate Y) they should be given when the program asks for them by separating them with a whitespace).
+>When entering the input parameters (coordinate X and coordinate Y) they should be given when the program asks for them by separating them with a whitespace.
 
 ## Assumptions
 
