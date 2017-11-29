@@ -43,10 +43,17 @@ Apart from that, it is highlighted that:
 **(Note that this output cannot be emulated with exact numbers since all of the input is randomly produced each time the program runs.)**
 
 `Please Input Coordinates:
-> 3 6
+
+3 6
+
 Closest Events to (3,6):
+
 Event 96 - $361, Distance 0
+
 Event 60 - $12, Distance 1
+
 Event 17 - $12, Distance 1.41421
+
 Event 58 - $13, Distance 2.23607
+
 Event 74 - $8, Distance 2.34541`
