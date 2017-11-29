@@ -50,7 +50,6 @@ int main() {
     // According to the specification, the world operates in the interval [-10,10]
     coordX1 = std::rand() % 21 - 10;
     coordY1 = std::rand() % 21 - 10;
-    cout << coordX1 << " and " << coordY1 << endl;
     event[i] = Event(coordX1, coordY1, tickets_for_event, ticket_num_for_event[i]);
   }
 
@@ -79,8 +78,8 @@ int main() {
 
    for(int i = 0; i < NEAREST_EVENTS; i++) {
      cout << "Event " << event[i].get_ID() << " - $" << event[i].cheapest_ticket_price()
-          << " Distance " << event[i].calculate_distance_from_location(coordX, coordY)
-          << "  ";
+          << ", Distance " << event[i].calculate_distance_from_location(coordX, coordY)
+          << endl;
    }
 
   return 0;
