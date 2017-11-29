@@ -33,6 +33,10 @@ public:
   int cheapest_ticket_price();
   // Returns event's ID
   int get_ID();
+  // Return event's coordx
+  int get_coordX();
+  // Return event's coordY
+  int get_coordY();
   // Returns the total number of event objects that have been created
   static int get_events_count();
 

@@ -43,6 +43,14 @@ int Event::get_ID() {
   return this->id;
 }
 
+int Event::get_coordX() {
+  return this->coordX;
+}
+
+int Event::get_coordY() {
+  return this->coordY;
+}
+
 int Event::get_events_count() {
   //Because it starts from 0
   return num_of_events;
